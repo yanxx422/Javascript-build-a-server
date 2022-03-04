@@ -12,7 +12,7 @@ describe("test imageProcessing functionality", () => {
     const height = "300";
     const imageName = "fjord.jpg";
     const thumbPath = path.resolve(
-      `assets/thumb/${imageName}_${width}x${height}.jpg`
+      `assets/thumb/${width}x${height}-${imageName}`
     );
     const url = "/api/image/?name=fjord.jpg&width=200&height=300";
     const res = await request.get(url);

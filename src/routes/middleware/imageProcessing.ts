@@ -26,7 +26,7 @@ imageProcessor.get(
     const imageName: string = req.query.name?.toString() || "";
     const imagePath: string = path.resolve(`assets/full/${imageName}`);
     const thumbPath = path.resolve(
-      `assets/thumb/${imageName}_${width}x${height}.jpg`
+      `assets/thumb/${width}x${height}-${imageName}`
     );
     const thumbDir = `assets/thumb`;
     if (fs.existsSync(thumbPath)) {
