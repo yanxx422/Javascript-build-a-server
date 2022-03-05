@@ -8,7 +8,8 @@ const pathValidation_1 = __importDefault(require("./middleware/pathValidation"))
 const imageProcessing_1 = __importDefault(require("./middleware/imageProcessing"));
 const routers = express_1.default.Router();
 const middleware = [pathValidation_1.default, imageProcessing_1.default];
-routers.use("/image", middleware, (req, res) => {
-    res.send("success!");
+routers.use('/image', middleware, (req, res) => {
+    res.send('success!');
 });
 exports.default = routers;
+//# sourceMappingURL=index.js.map

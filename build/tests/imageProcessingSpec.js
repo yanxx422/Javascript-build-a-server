@@ -12,20 +12,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = __importDefault(require("../server/index"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-const supertest_1 = __importDefault(require("supertest"));
-const request = (0, supertest_1.default)(index_1.default);
-describe("test imageProcessing functionality", () => {
-    it("Should create a re-sized image file in the thumb directory", () => __awaiter(void 0, void 0, void 0, function* () {
-        const width = "200";
-        const height = "300";
-        const imageName = "fjord.jpg";
-        const thumbPath = path_1.default.resolve(`assets/thumb/${imageName}_${width}x${height}.jpg`);
-        const url = "/api/image/?name=fjord.jpg&width=200&height=300";
-        const res = yield request.get(url);
-        expect(fs_1.default.existsSync(thumbPath)).toBeTrue();
+const createThumb_1 = __importDefault(require("../routes/middleware/helpers/createThumb"));
+describe('test create image thumb functionality', () => {
+    it('Should create a re-sized image file in the thumb directory', () => __awaiter(void 0, void 0, void 0, function* () {
+        const width = '200';
+        const height = '300';
+        const imageName = 'fjord.jpg';
+        const imagePath = path_1.default.resolve(`assets/full/${imageName}`);
+        const thumbPath = path_1.default.resolve(`assets/thumb/${width}x${height}-${imageName}`);
+        expect(() => __awaiter(void 0, void 0, void 0, function* () {
+            yield (0, createThumb_1.default)(parseInt(width), parseInt(height), imagePath, thumbPath);
+        })).not.toThrow();
         fs_1.default.unlinkSync(thumbPath);
     }));
 });
+//# sourceMappingURL=imageProcessingSpec.js.map
