@@ -9,14 +9,16 @@ Run `npm install` to install dependencies
 
 Run `npm run lint` to use eslint and prettier
 
+Run `npm run lint -- --fix` to fix lint and prettier errors
+
 
 Run `npm run test` to run jasmine tests
 
 ### How to Start the Server
 
-Run `npm run dev` to run nodemon on src/server/index.ts in development mode
+Run `npm run start-dev` to run nodemon on src/server/index.ts in development mode
 
-Run `npm run start` to run node on build/server/index.js
+Run `npm run build` and `npm run start` to run node on build/server/index.js
 
 Check `http://localhost:3000/`, this is the root of this api, it should say "Server is running" upon success.
 
