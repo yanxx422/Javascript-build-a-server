@@ -10,7 +10,7 @@
     "jasmine": "jasmine",
     "lint": "eslint . --ext .ts",
     "test": "npm run build && npm run jasmine",
-    "prettier": "prettier --config .prettierrc \"src/**/*.js\" --write"
+    "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write"
   },
   "repository": {
     "type": "git",

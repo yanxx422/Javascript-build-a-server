@@ -12,6 +12,6 @@ describe('Server is running', () => {
     const res = await request.get(
       '/api/image/?name=fjord.jpg&width=200&height=300'
     );
-    expect(res.status).toBe(200);
+    expect(res.status).toEqual(200);
   });
 });
