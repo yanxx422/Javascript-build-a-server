@@ -30,7 +30,7 @@ As an example, if you have the image `fjord.jpg` in the `assets/full` folder, af
 
 the server is running on port 3000, you can enter `http://localhost:3000/api/image/?name=fjord.jpg&width=200&height=200` on the browser, 
 
-this will show the resized image with width = 200 and height = 200 on the page,
+this will show the resized image with width = 200 and height = 200 (in pixels) on the page,
 
 and a resized photo will appear in `assets/thumb` folder with the name `200x200-fjord.jpg`
 
