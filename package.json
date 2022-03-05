@@ -1,58 +1,46 @@
 {
-  "name": "building-a-server-project",
+  "name": "image-api",
   "version": "1.0.0",
-  "description": "This project aims to give you a real-world scenario in which you would read and write to your disk via a Node.js express server rather than a database. The project you create serves two purposes: to prepare you for setting up scalable code and architecture for real-world projects and tie together some of the most popular middleware and utilities found in Node.js projects. This project barely touches the surface of what is possible but will prove your ability to use what you’ve learned in real-world scenarios.",
+  "description": "This is an image api that lets you resize the image in the file system.",
   "main": "index.js",
   "scripts": {
-    "jasmine": "jasmine",
     "build": "npx tsc",
-    "dev": "nodemon src/server/index.ts",
+    "start-dev": "nodemon src/server/index.ts",
+    "start": "node build/server/.",
+    "jasmine": "jasmine",
+    "lint": "eslint . --ext .ts",
     "test": "npm run build && npm run jasmine",
-    "lint": "eslint --ext .js,.ts .",
-    "start": "node build/server/index.js"
+    "prettier": "prettier --config .prettierrc \"src/**/*.js\" --write"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/udacity/nd-0067-c1-building-a-server-project-starter.git"
+    "url": "git+https://github.com/yanxx422/Javascript-build-a-server.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Xiuyu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/udacity/nd-0067-c1-building-a-server-project-starter/issues"
+    "url": "https://github.com/yanxx422/Javascript-build-a-server/issues"
   },
-  "homepage": "https://github.com/udacity/nd-0067-c1-building-a-server-project-starter#readme",
+  "homepage": "https://github.com/yanxx422/Javascript-build-a-server#readme",
   "devDependencies": {
-    "@babel/eslint-parser": "^7.17.0",
     "@types/express": "^4.17.13",
     "@types/jasmine": "^3.10.3",
-    "@types/node": "^17.0.21",
-    "@types/sharp": "^0.29.5",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
-    "@typescript-eslint/parser": "^5.13.0",
-    "eslint": "^8.10.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-google": "^0.14.0",
+    "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "module-name": "^0.0.1-security",
+    "jasmine": "^4.0.2",
+    "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
     "supertest": "^6.2.2",
-    "ts-node": "^10.6.0",
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.5.4",
+    "@types/node": "^17.0.21",
+    "@types/sharp": "^0.29.5",
     "express": "^4.17.3",
-    "jasmine": "^4.0.2",
-    "jasmine-spec-reporter": "^7.0.0",
     "sharp": "^0.30.2"
   }
 }

@@ -1,4 +1,4 @@
-import sharp from 'sharp'
+import sharp from 'sharp';
 
 export default async function createThumb(
   width: number,
@@ -7,8 +7,8 @@ export default async function createThumb(
   outfile: string
 ): Promise<void> {
   try {
-    await sharp(infile).resize(width, height).toFile(outfile)
+    await sharp(infile).resize(width, height).toFile(outfile);
   } catch (err) {
-    console.error(err)
+    console.error(err);
   }
 }

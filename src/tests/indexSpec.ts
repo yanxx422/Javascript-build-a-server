@@ -9,7 +9,9 @@ describe('Server is running', () => {
     done();
   });
   it('should resize image', async () => {
-    const res = await request.get('/api/image/?name=fjord.jpg&width=200&height=300');
+    const res = await request.get(
+      '/api/image/?name=fjord.jpg&width=200&height=300'
+    );
     expect(res.status).toBe(200);
   });
 });

@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import createThumb from '../routes/middleware/helpers/createThumb';
 
@@ -8,10 +7,16 @@ describe('test create image thumb functionality', () => {
     const height = '300';
     const imageName = 'fjord.jpg';
     const imagePath = path.resolve(`assets/full/${imageName}`);
-    const thumbPath = path.resolve(`assets/thumb/${width}x${height}-${imageName}`);
+    const thumbPath = path.resolve(
+      `assets/thumb/${width}x${height}-${imageName}`
+    );
     expect(async () => {
-      await createThumb(parseInt(width), parseInt(height), imagePath, thumbPath);
+      await createThumb(
+        parseInt(width),
+        parseInt(height),
+        imagePath,
+        thumbPath
+      );
     }).not.toThrow();
-    fs.unlinkSync(thumbPath);
   });
 });
