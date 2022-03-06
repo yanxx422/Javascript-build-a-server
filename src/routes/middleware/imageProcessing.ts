@@ -12,9 +12,14 @@ imageProcessor.get(
     const height: string = req.query.height?.toString() || '400';
     const imageName: string = req.query.name?.toString() || '';
     const imagePath: string = path.resolve(`assets/full/${imageName}`);
+    const thumbDir = path.resolve(`assets/thumb`);
+    if (!fs.existsSync(thumbDir)) {
+      fs.mkdirSync(thumbDir);
+    }
     const thumbPath = path.resolve(
       `assets/thumb/${width}x${height}-${imageName}`
     );
+
     if (fs.existsSync(thumbPath)) {
       res.sendFile(thumbPath);
     } else {
